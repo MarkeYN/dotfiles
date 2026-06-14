@@ -8,7 +8,6 @@ export PATH="/opt/homebrew/bin:$PATH"
 #================================================================== 
 # 2. Other PATH
 #================================================================== 
-export LANG=en_US.UTF-8
 
 #  Homebrew source
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
@@ -17,7 +16,7 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bot
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
 
 #================================================================== 
-# 3. Oh My Zsh Cconfiguration
+# 3. Oh My Zsh Configuration
 #================================================================== 
 
 # Path to your Oh My Zsh installation.
@@ -99,6 +98,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -122,6 +122,26 @@ eval "$(zoxide init zsh)"
 source <(fzf --zsh)
 
 #================================================================== 
+# 5.1 fzf-configuration
+#==================================================================
+# Global Default Configuration
+export FZF_DEFAULT_OPTS="
+  --height=40%
+  --layout=reverse
+  --border=rounded
+  --info=inline
+  "
+
+# Ctrl+T
+export FZF_CTRL_T_OPTS="
+  --preview 'if [[ -d {} ]]; then tree -C {} | head -100; else bat --color=always --style=numbers --line-range=:100 {}; fi'"
+# Ctrl+R
+export FZF_CTRL_R_OPTS="
+  --preview='echo {}' --preview-window=down:3:hidden:wrap
+  --preview-window 'right:60%:border-rounded'
+  --bind='ctrl-/:toggle-preview'"
+
+#================================================================== 
 # 6. Alais
 #================================================================== 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
@@ -135,6 +155,7 @@ source <(fzf --zsh)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls='lsd'
+alias ll='lsd -lah'
 
 # clean $PATH Duplication
 typeset -U PATH

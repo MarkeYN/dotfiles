@@ -20,9 +20,9 @@ set signcolumn=yes
 
 syntax on
 
-if &t_Co > 2 || has("gui_running")
-    set hlsearch
-endif
+" if &t_Co > 2 || has("gui_running")
+"     set hlsearch
+" endif
 
 augroup vimrcEx
     au!
@@ -55,6 +55,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'sainnhe/sonokai'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " =======================================================
