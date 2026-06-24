@@ -24,5 +24,7 @@
     - Explorer extension: [coc-explorer](https://github.com/weirongxu/coc-explorer)
     - Multi-Selection: [vim-visual-multi](https://github.com/mg979/vim-visual-multi)
     - Selection Region: [vim-expand-region](https://github.com/terryma/vim-expand-region)
+    - Beautiful status/tabline: [vim-airline](https://github.com/vim-airline/vim-airline)
+    - Type icons for vim plugins: [vim-devicons](https://github.com/ryanoasis/vim-devicons)
 
 
