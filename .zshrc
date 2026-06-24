@@ -121,6 +121,8 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 source <(fzf --zsh)
 
+# Mole shell completion
+if output="$(mole completion zsh 2>/dev/null)"; then eval "$output"; fi
 #================================================================== 
 # 5.1 fzf-configuration
 #==================================================================
@@ -154,8 +156,9 @@ export FZF_CTRL_R_OPTS="
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls='lsd'
+# alias ls='lsd'
 alias ll='lsd -lah'
 
 # clean $PATH Duplication
 typeset -U PATH
+
