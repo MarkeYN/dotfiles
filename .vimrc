@@ -59,6 +59,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'terryma/vim-expand-region'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " =======================================================
@@ -79,7 +82,7 @@ let g:sonokai_better_performance = 1
 let g:sonokai_enable_italic = 0
 colorscheme sonokai
 
-
+let g:airline_theme='simple'
 " =======================================================
 "  NERDTree
 " =======================================================
